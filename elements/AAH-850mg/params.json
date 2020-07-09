@@ -1,0 +1,38 @@
+{
+    "add_is_visible": true,
+    "category": "visual elements",
+    "default_dim": {
+        "height": 10,
+        "width": 10
+    },
+    "display": "ConvertTime",
+    "fields": {
+        "AAI": {
+            "caption": "localDate",
+            "doc": "Date from user's local time zone",
+            "editor": "DynamicValue",
+            "name": "localDate",
+            "rank": 0,
+            "value": "date"
+        },
+        "AAJ": {
+            "caption": "dstZone",
+            "doc": "Desired time zone ID for this raw date",
+            "editor": "DynamicValue",
+            "name": "dstZone",
+            "rank": 1,
+            "value": "text"
+        }
+    },
+    "icon": "ion-android-globe",
+    "states": {
+        "AAK": {
+            "caption": "dstDate",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\n\n\n}"
+            },
+            "name": "dstDate",
+            "value": "date"
+        }
+    }
+}
