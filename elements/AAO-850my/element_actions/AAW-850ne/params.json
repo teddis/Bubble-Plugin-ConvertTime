@@ -1,31 +1,34 @@
 {
     "caption": "Format",
+    "doc": "Format a duration",
     "fields": {
         "AAX": {
             "caption": "Duration",
             "default_val": 0,
+            "doc": "Duration in minutes or seconds as set by In Minutes",
             "editor": "DynamicValue",
             "name": "duration",
-            "rank": 1,
+            "rank": 0,
             "value": "number"
         },
         "AAZ": {
             "caption": "format",
-            "default_val": "Countdown",
-            "doc": "",
+            "default_val": "CountdownHMS",
+            "doc": "Desired format result: Countdown is (-)hh:mm:ss and Duration is (h[h]) (m[m]), e.g. \"2h 21m\" where hours or minutes is hidden if zero.",
             "editor": "Dropdown",
             "name": "format",
             "optional": false,
-            "options": "Countdown,Duration",
-            "rank": 0,
+            "options": "CountdownHM,CountdownHMS,DurationHM,DurationHMS",
+            "rank": 2,
             "value": "text"
         },
         "AAa": {
             "caption": "In Minutes",
             "default_val": false,
+            "doc": "Input duration in minutes (checked) or seconds (unchecked)",
             "editor": "Checkbox",
             "name": "in_minutes",
-            "rank": 2,
+            "rank": 1,
             "value": "boolean"
         }
     }

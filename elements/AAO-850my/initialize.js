@@ -1,19 +1,23 @@
 function(instance, context) {
-	instance.data.format = function (duration, inMins, formatType) {
+  instance.data.format = function (duration, inMins, formatType) {
     formatType = formatType.trim();
     const dur = moment.duration(duration, inMins ? "m" : "s");
     const sign = Math.sign(dur);
     let text = "";
-    if (formatType === "Countdown") {
-      text = (sign < 0 ? "-" : "") + sprintf("%02u:%02u:%02u",
+    if (formatType.startsWith("Countdown")) {
+      const fmt = "%02u:%02u" + (formatType.endsWith("S") ? ":%02u" : "");
+      text = (sign < 0 ? "-" : "") + sprintf(fmt,
         Math.abs(dur.hours()), Math.abs(dur.minutes()), Math.abs(dur.seconds()));
-    } else if (formatType === "Duration") {
-      const hours = dur.hours();
-      const mins = dur.minutes();
-      if (hours) text += `${hours}h`;
-      if (hours && mins) text += " ";
-      if (mins) text += `${mins}m`;
-      if (!mins && !hours) text = "0m";
+    } else if (formatType.startsWith("Duration")) {
+      const showSecs = formatType.endsWith("S");
+      const hours = Math.abs(dur.hours());
+      const mins = Math.abs(dur.minutes());
+      const secs = Math.abs(dur.seconds());
+      const list = [];
+      if (hours) list.push(`${hours}h`);
+      if (mins) list.push(`${mins}m`);
+      if (showSecs && secs) list.push(`${secs}s`);
+      text = list.join(" ") || "0m"
     }
     return text;
   }
