@@ -25,6 +25,9 @@
         }
     },
     "icon": "ion-android-globe",
+    "property_applications": {
+        "resizable": true
+    },
     "states": {
         "AAK": {
             "caption": "dstDate",

@@ -1,0 +1,60 @@
+{
+    "add_is_visible": true,
+    "category": "visual elements",
+    "default_dim": {
+        "height": 20,
+        "width": 20
+    },
+    "display": "Duration Formatter",
+    "events": {
+        "AAV": {
+            "caption": "Formatted Duration",
+            "doc": "Even when the duration has been formatted",
+            "name": "formatted_duration"
+        }
+    },
+    "fields": {
+        "AAc": {
+            "caption": "In Minutes",
+            "default_val": true,
+            "doc": "Input duration in minutes (true) or seconds (false)",
+            "editor": "Checkbox",
+            "name": "in_minutes",
+            "rank": 0
+        },
+        "AAd": {
+            "caption": "Duration",
+            "default_val": 0,
+            "doc": "Duration in minutes or seconds as set by In Minutes",
+            "editor": "DynamicValue",
+            "name": "duration",
+            "rank": 1,
+            "value": "number"
+        },
+        "AAe": {
+            "caption": "format",
+            "default_val": "Countdown",
+            "doc": "Choose a desired format result",
+            "editor": "Dropdown",
+            "name": "format",
+            "options": "Countdown,Duration",
+            "rank": 2
+        }
+    },
+    "icon": "ion-android-time",
+    "property_applications": {
+        "resizable": true
+    },
+    "states": {
+        "AAR": {
+            "caption": "Duration Format",
+            "doc": "Formatted duration result",
+            "initialization_code": {
+                "add_debugger": false,
+                "fn": "function(properties, context) {\n}"
+            },
+            "name": "duration_format",
+            "value": "text"
+        }
+    }
+}

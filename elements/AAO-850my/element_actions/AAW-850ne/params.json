@@ -1,0 +1,32 @@
+{
+    "caption": "Format",
+    "fields": {
+        "AAX": {
+            "caption": "Duration",
+            "default_val": 0,
+            "editor": "DynamicValue",
+            "name": "duration",
+            "rank": 1,
+            "value": "number"
+        },
+        "AAZ": {
+            "caption": "format",
+            "default_val": "Countdown",
+            "doc": "",
+            "editor": "Dropdown",
+            "name": "format",
+            "optional": false,
+            "options": "Countdown,Duration",
+            "rank": 0,
+            "value": "text"
+        },
+        "AAa": {
+            "caption": "In Minutes",
+            "default_val": false,
+            "editor": "Checkbox",
+            "name": "in_minutes",
+            "rank": 2,
+            "value": "boolean"
+        }
+    }
+}
