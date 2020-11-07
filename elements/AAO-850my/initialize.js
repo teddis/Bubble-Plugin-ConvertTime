@@ -10,10 +10,12 @@ function(instance, context) {
         Math.abs(dur.hours()), Math.abs(dur.minutes()), Math.abs(dur.seconds()));
     } else if (formatType.startsWith("Duration")) {
       const showSecs = formatType.endsWith("S");
+      const days = Math.abs(dur.days());
       const hours = Math.abs(dur.hours());
       const mins = Math.abs(dur.minutes());
       const secs = Math.abs(dur.seconds());
       const list = [];
+      if (days) list.push(`${days}d`);
       if (hours) list.push(`${hours}h`);
       if (mins) list.push(`${mins}m`);
       if (showSecs && secs) list.push(`${secs}s`);
